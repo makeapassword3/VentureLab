@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VentureLab</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <nav class="navbar">
+
+    <h2>VENTURELAB</h2>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button class="mobile-menu-button" id="mobileMenuButton">
+        ☰
+    </button>
+
+    <!-- NAVIGATION LINKS -->
+    <div class="nav-links">
+
+        <button class="tab-button active" data-tab="home">Home</button>
+
+        <button class="tab-button" data-tab="ideas">Business Ideas</button>
+
+        <button class="tab-button" data-tab="finance">Financial Tools</button>
+
+        <button class="tab-button" data-tab="dashboard">My Dashboard</button>
+
+        <button class="tab-button" data-tab="planner">Business Planner</button>
+
+        <button class="tab-button" data-tab="venturebot">VentureBot</button>
+
+        <button class="tab-button" data-tab="profile">My Profile</button>
+
+        <button class="tab-button" data-tab="about">About Us</button>
+
+    </div>
+
+</nav>
+    <!-- HOME TAB -->
+
+    <section class="tab-content active" id="home">
+
+        <section class="hero">
+
+            <h1>Build Your Ideas. Create Your Future.</h1>
+
+            <p>
+                Discover Your Potential<br>
+                Build Your Business<br>
+                Create Your Future
+            </p>
+
+            <button class="start-button" id="startButton">
+                Get Started
+            </button>
+
+        </section>
+
+        <section class="features">
+
+            <div class="feature-card" data-tab="ideas">
+                <span>01</span>
+                <h2>DISCOVER</h2>
+                <p>Explore business opportunities and discover ideas that match your interests.</p>
+            </div>
+
+            <div class="feature-card" data-tab="finance">
+                <span>02</span>
+                <h2>CALCULATE</h2>
+                <p>Understand startup costs, revenue, expenses and potential profit.</p>
+            </div>
+
+            <div class="feature-card" data-tab="planner">
+                <span>03</span>
+                <h2>BUILD</h2>
+                <p>Turn your ideas into structured business plans and actionable steps.</p>
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- BUSINESS IDEAS TAB -->
+
+    <section class="tab-content" id="ideas">
+
+        <section class="business-section">
+
+            <h1>Discover Business Opportunities</h1>
+
+            <h2>What interests you?</h2>
+
+            <p>Select all the categories that interest you.</p>
+
+            <div class="business-grid">
+
+                <label class="business-card">
+                    <input type="checkbox" value="online">
+                    <span>Online Business</span>
+                </label>
+
+                <label class="business-card">
+                    <input type="checkbox" value="technology">
+                    <span>Technology</span>
+                </label>
+
+                <label class="business-card">
+                    <input type="checkbox" value="finance">
+                    <span>Finance</span>
+                </label>
+
+                <label class="business-card">
+                    <input type="checkbox" value="products">
+                    <span>Selling Products</span>
+                </label>
+
+                <label class="business-card">
+                    <input type="checkbox" value="services">
+                    <span>Local Services</span>
+                </label>
+
+                <label class="business-card">
+                    <input type="checkbox" value="unsure">
+                    <span>I'm Not Sure Yet</span>
+                </label>
+
+            </div>
+
+            <button class="generate-button" id="generateButton">
+                Generate Business Ideas
+            </button>
+
+            <div id="results"></div>
+
+            <div id="businessDetailsView" style="display:none;">
+
+                <h2 id="detailTitle"></h2>
+
+                <p id="detailDescription"></p>
+
+                <h3>Target Customers</h3>
+
+                <p id="detailCustomers"></p>
+
+                <h3>How to Make Money</h3>
+
+                <p id="detailIncome"></p>
+
+                <button id="backButton">Back to Business Ideas</button>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- FINANCIAL TOOLS TAB -->
+
+    <section class="tab-content" id="finance">
+
+        <section class="financial-section">
+
+            <h1>Financial Tools</h1>
+
+            <p>Understand your business finances and plan your financial future.</p>
+
+            <div class="calculator">
+
+                <h2>Profit Calculator</h2>
+
+                <h3>Startup Costs</h3>
+
+                <label for="equipment">Equipment ($)</label>
+                <input type="number" id="equipment" min="0" placeholder="Enter amount">
+
+                <label for="marketing">Marketing ($)</label>
+                <input type="number" id="marketing" min="0" placeholder="Enter amount">
+
+                <label for="expenses">Other Expenses ($)</label>
+                <input type="number" id="expenses" min="0" placeholder="Enter amount">
+
+                <h3>Sales Information</h3>
+
+                <label for="price">Selling Price ($)</label>
+                <input type="number" id="price" min="0" placeholder="Enter price">
+
+                <label for="cost">Cost Per Sale ($)</label>
+                <input type="number" id="cost" min="0" placeholder="Enter cost">
+
+                <label for="sales">Expected Sales</label>
+                <input type="number" id="sales" min="0" placeholder="Number of sales">
+
+                <button id="calculateButton">Calculate My Business</button>
+
+                <div id="financialResults"></div>
+
+            </div>
+
+
+            <!-- BREAK-EVEN CALCULATOR -->
+
+            <div class="calculator">
+
+                <h2>Break-Even Calculator</h2>
+
+                <p>Discover how many sales your business needs to cover its costs.</p>
+
+                <label for="fixedCosts">Fixed Costs ($)</label>
+                <input type="number" id="fixedCosts" min="0" placeholder="Enter fixed costs">
+
+                <label for="sellingPrice">Selling Price Per Item ($)</label>
+                <input type="number" id="sellingPrice" min="0" placeholder="Enter selling price">
+
+                <label for="variableCost">Variable Cost Per Item ($)</label>
+                <input type="number" id="variableCost" min="0" placeholder="Enter variable cost">
+
+                <button id="breakEvenButton">Calculate Break-Even Point</button>
+
+                <div id="breakEvenResults"></div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- MY DASHBOARD TAB -->
+
+    <section class="tab-content" id="dashboard">
+
+        <section class="dashboard-section">
+
+            <h1>My Dashboard</h1>
+
+            <p>Manage your entrepreneurial journey.</p>
+
+            <div class="dashboard-stats">
+
+                <div class="dashboard-card">
+                    <h2 id="planCount">0</h2>
+                    <p>Total Projects</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2 id="completedCount">0</h2>
+                    <p>Completed Projects</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2 id="inProgressCount">0</h2>
+                    <p>In Progress</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2 id="averageProgress">0%</h2>
+                    <p>Average Progress</p>
+                </div>
+
+            </div>
+
+            <h2>My Business Projects</h2>
+
+            <input type="text" id="searchPlans" placeholder="Search your business projects...">
+
+            <select id="filterPlans">
+                <option value="all">All Projects</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+            <div id="savedPlans"></div>
+
+        </section>
+
+    </section>
+
+
+    <!-- BUSINESS PLANNER TAB -->
+
+    <section class="tab-content" id="planner">
+
+        <section class="planner-section">
+
+            <h1>Build Your Business</h1>
+
+            <p>Turn your ideas into a structured business plan.</p>
+
+            <div class="template-section">
+
+                <h2>Choose a Starting Template</h2>
+
+                <p>Select a template to help organize your business idea.</p>
+
+                <select id="planTemplate">
+                    <option value="">Choose a Template</option>
+                    <option value="online">Online Business</option>
+                    <option value="products">Product Business</option>
+                    <option value="services">Service Business</option>
+                    <option value="technology">Technology Startup</option>
+                </select>
+
+                <button id="applyTemplateButton">Apply Template</button>
+
+            </div>
+
+            <div class="planner-container">
+
+                <label for="businessName">Business Name</label>
+                <input type="text" id="businessName" placeholder="Enter your business name">
+
+                <label for="businessIdea">Business Idea</label>
+                <textarea id="businessIdea" placeholder="Describe your business idea"></textarea>
+
+                <label for="targetAudience">Target Audience</label>
+                <input type="text" id="targetAudience" placeholder="Who are your customers?">
+
+                <label for="products">Products & Services</label>
+                <textarea id="products" placeholder="What will you sell or offer?"></textarea>
+
+                <label for="marketingStrategy">Marketing Strategy</label>
+                <textarea id="marketingStrategy" placeholder="How will you attract customers?"></textarea>
+
+                <label for="businessGoals">Business Goals</label>
+                <textarea id="businessGoals" placeholder="What do you want to achieve?"></textarea>
+
+                <button id="savePlanButton">Create My Business Plan</button>
+
+                <button id="saveDraftButton">Save My Plan</button>
+
+                <button id="loadDraftButton">Load Saved Plan</button>
+
+                <button id="downloadPlanButton">Download My Plan</button>
+
+                <p id="draftStatus" aria-live="polite"></p>
+
+                <div id="planResults"></div>
+
+            </div>
+
+            <!-- BUSINESS PLAN PREVIEW -->
+
+            <div id="planPreview" style="display:none;">
+
+                <h2>Business Plan Preview</h2>
+
+                <h3 id="previewName"></h3>
+
+                <h4>Business Idea</h4>
+                <p id="previewIdea"></p>
+
+                <h4>Target Audience</h4>
+                <p id="previewAudience"></p>
+
+                <h4>Products & Services</h4>
+                <p id="previewProducts"></p>
+
+                <h4>Marketing Strategy</h4>
+                <p id="previewMarketing"></p>
+
+                <h4>Business Goals</h4>
+                <p id="previewGoals"></p>
+
+                <button id="editPreviewButton">Edit My Plan</button>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- VENTUREBOT TAB -->
+
+    <section class="tab-content" id="venturebot">
+
+        <section class="chat-section">
+
+            <h1>Meet VentureBot.</h1>
+
+            <p>Your personal entrepreneurship assistant.</p>
+
+            <div class="chat-container">
+
+                <div id="chatMessages" aria-live="polite">
+
+                    <div class="bot-message">
+                        Hello! I'm VentureBot. How can I help you develop your business idea today?
+                    </div>
+
+                </div>
+
+                <div class="chat-input-area">
+
+                    <input type="text" id="chatInput"
+                        placeholder="Ask VentureBot something...">
+
+                    <button id="sendMessageButton">Send</button>
+
+                </div>
+
+            </div>
+
+            <p class="chat-disclaimer">
+                VentureBot currently uses programmed responses and is not connected to an AI model.
+            </p>
+
+        </section>
+
+    </section>
+
+
+    <!-- MY PROFILE TAB -->
+
+    <section class="tab-content" id="profile">
+
+        <section class="profile-section">
+
+            <h1>My Profile</h1>
+
+            <p>Manage your VentureLab identity.</p>
+
+            <div class="profile-container">
+
+                <h2>Personal Information</h2>
+
+                <label for="profileName">Full Name</label>
+
+                <input
+                    type="text"
+                    id="profileName"
+                    placeholder="Enter your name"
+                >
+
+                <label for="profileEmail">Email Address</label>
+
+                <input
+                    type="email"
+                    id="profileEmail"
+                    placeholder="Enter your email"
+                >
+
+                <button id="saveProfileButton">
+                    Save Profile
+                </button>
+
+                <div id="profileResults" aria-live="polite"></div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- ABOUT US TAB -->
+
+    <section class="tab-content" id="about">
+
+        <section class="about-section">
+
+            <h1>About VentureLab</h1>
+
+            <p>Helping young entrepreneurs turn ideas into opportunities.</p>
+
+            <h2>Our Mission</h2>
+
+            <p>
+                To make entrepreneurship easier, more accessible
+                and more understandable for the next generation.
+            </p>
+
+            <h2>Our Vision</h2>
+
+            <p>
+                To empower young people with the tools,
+                knowledge and confidence to explore entrepreneurship.
+            </p>
+
+        </section>
+
+    </section>
+
+
+    <!-- JAVASCRIPT CONNECTION -->
+
+    <script src="touchy.js"></script>
+
+</body>
+
+</html>
